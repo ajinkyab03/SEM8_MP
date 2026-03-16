@@ -31,12 +31,13 @@ app.get("/", (req, res) => {
 mongoose.set("strictQuery", false);
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URL, {
+    await mongoose.connect("mongodb://127.0.0.1:27017/mydatabase", {
       //   useNewUrlParser: true,
       //   useUnifiedTopology: true,
     });
     console.log("Mongoose connected");
   } catch (error) {
+    console.log(error);
     console.log("Mongoose connection failed");
   }
 };

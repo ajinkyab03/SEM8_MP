@@ -1,0 +1,148 @@
+.report-page{
+padding:40px;
+background:#f4f7fb;
+min-height:100vh;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+.page-title{
+font-size:34px;
+font-weight:700;
+margin-bottom:10px;
+}
+
+.page-subtitle{
+color:#666;
+margin-bottom:40px;
+}
+
+/* Upload Card */
+
+.upload-card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+max-width:500px;
+margin-bottom:40px;
+}
+
+.upload-card input{
+margin-top:10px;
+}
+
+.analyze-btn{
+margin-top:15px;
+padding:12px 20px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+font-weight:600;
+}
+
+.analyze-btn:hover{
+background:#1d4ed8;
+}
+
+.file-name{
+margin-top:10px;
+color:#555;
+}
+
+/* AI scanning animation */
+
+.ai-scanning{
+text-align:center;
+margin-top:30px;
+}
+
+.scanner{
+width:120px;
+height:120px;
+border-radius:50%;
+border:6px solid #ddd;
+border-top:6px solid #2563eb;
+margin:auto;
+animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+}
+
+/* Results */
+
+.results-grid{
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:30px;
+}
+
+/* Table */
+
+.report-table{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:10px;
+}
+
+th, td{
+padding:12px;
+border-bottom:1px solid #eee;
+text-align:left;
+}
+
+th{
+background:#f1f5f9;
+}
+
+/* Status */
+
+.status{
+font-weight:600;
+padding:4px 8px;
+border-radius:5px;
+}
+
+.status.normal{
+background:#dcfce7;
+color:#15803d;
+}
+
+.status.low{
+background:#fef3c7;
+color:#92400e;
+}
+
+.status.high{
+background:#fee2e2;
+color:#b91c1c;
+}
+
+/* Recommendation */
+
+.recommendation-box{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.recommendation-box ul{
+margin-top:15px;
+padding-left:20px;
+}
+
+.recommendation-box li{
+margin-bottom:10px;
+}

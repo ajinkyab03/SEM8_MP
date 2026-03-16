@@ -16,18 +16,25 @@ import { services } from "../assets/data/services.js";
 import DiseasePage from "../components/Services/Disease/DiseasePage.jsx";
 import ForgotPassword from "../pages/ForgotPassword.jsx";
 import ResetPassword from "../pages/ResetPassword.jsx";
-
+import SmartLabDashboard from "../components/SmartLabDashboard.jsx"
+import AIHealthRiskPrediction from "../components/AIHealthRiskPrediction.jsx"
+import AIMedicalReportAnalyzer from "../components/AIMedicalReportAnalyzer.jsx"
+import Labtracker from "../components/LabWorkflowTracker.jsx"
 const Routers = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/analytics" element={<SmartLabDashboard />} />
       <Route path="/home" element={<Home />} />
       <Route path="/symptomchk" element={<Symptomchk />} />
       <Route path="/doctors" element={<Doctors />} />
       <Route path="/doctors/:id" element={<DoctorDetails />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Signup />} />
+      <Route path="/report-ai" element={<AIMedicalReportAnalyzer />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/ai-risk" element={<AIHealthRiskPrediction  />} />
+      <Route path="/lab-tracker" element={<Labtracker  />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/reset-password/:id/:token" element={<ResetPassword />} />
 

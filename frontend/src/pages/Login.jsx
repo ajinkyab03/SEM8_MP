@@ -33,6 +33,7 @@ const Login = () => {
       });
       const result = await res.json();
       if (!res.ok) {
+        console.log(result.message);
         throw new Error(result.message);
       }
 
@@ -53,6 +54,7 @@ const Login = () => {
         navigate("/home");
       }
     } catch (err) {
+      console.log(err);
       toast.error(err.message);
       setLoading(false);
     }
