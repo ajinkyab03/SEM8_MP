@@ -57,6 +57,7 @@ app.use("/api/v1/", contactRoute);
 app.use("/api/v1/", forgotPassRoute);
 app.use("/api/v1/", healthRoute);
 
+console.log("JWT_SECRET:", process.env.JWT_SECRET);
 app.listen(port, () => {
   connectDB();
   console.log("Server is running on port " + port);

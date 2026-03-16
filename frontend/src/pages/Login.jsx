@@ -38,13 +38,13 @@ const Login = () => {
       }
 
       dispatch({
-        type: "LOGIN_SUCCESS",
-        payload: {
-          user: result.data,
-          token: result.token,
-          role: result.role,
-        },
-      });
+  type: "LOGIN_SUCCESS",
+  payload: {
+    user: result.data,
+    token: result.token,
+    role: result.data.role,
+  },
+});
 
       setLoading(false);
       toast.success(result.message);
