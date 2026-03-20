@@ -31,28 +31,35 @@ const Login = () => {
         },
         body: JSON.stringify(formData),
       });
+
       const result = await res.json();
+
       if (!res.ok) {
-        console.log(result.message);
         throw new Error(result.message);
       }
 
+      // 🔥 IMPORTANT FIX
       dispatch({
-  type: "LOGIN_SUCCESS",
-  payload: {
-    user: result.data,
-    token: result.token,
-    role: result.data.role,
-  },
-});
+        type: "LOGIN_SUCCESS",
+        payload: {
+          user: result.data,
+          token: result.token,
+          role: result.role, // <-- Correct role
+        },
+      });
 
       setLoading(false);
       toast.success(result.message);
+
+      // Navigation based on role
       if (result.role === "doctor") {
         navigate("/doctors/profile/me");
+      } else if (result.role === "assistant") {
+        navigate("/home");
       } else {
         navigate("/home");
       }
+
     } catch (err) {
       console.log(err);
       toast.error(err.message);
@@ -67,7 +74,9 @@ const Login = () => {
           Hello
           <span className="text-primaryColor"> Welcome </span> Back 👋
         </h3>
-        <form action="" className="py-4 md:py-0" onSubmit={submitHandler}>
+
+        <form className="py-4 md:py-0" onSubmit={submitHandler}>
+
           <div className="mb-5">
             <input
               type="email"
@@ -75,10 +84,11 @@ const Login = () => {
               name="email"
               value={formData.email}
               onChange={handleInputChange}
-              className="w-full py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer"
+              className="w-full py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor"
               required
             />
           </div>
+
           <div className="mb-5">
             <input
               type="password"
@@ -86,15 +96,17 @@ const Login = () => {
               name="password"
               value={formData.password}
               onChange={handleInputChange}
-              className="w-full py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer"
+              className="w-full py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor"
               required
             />
           </div>
+
           <div className="mb-5">
             <Link to="/forgot-password" className="text-primaryColor">
               Forgot Password?
             </Link>
           </div>
+
           <div className="mt-7">
             <button
               type="submit"
@@ -103,12 +115,14 @@ const Login = () => {
               {loading ? <HashLoader size={25} color="#ffffff" /> : "Login"}
             </button>
           </div>
+
           <p className="mt-5 text-textColor text-center">
             Don't have an account?{" "}
             <Link to="/register" className="text-primaryColor font-medium ml-1">
               Register
             </Link>
           </p>
+
         </form>
       </div>
     </section>

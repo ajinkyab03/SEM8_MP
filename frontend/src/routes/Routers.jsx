@@ -20,6 +20,8 @@ import SmartLabDashboard from "../components/SmartLabDashboard.jsx"
 import AIHealthRiskPrediction from "../components/AIHealthRiskPrediction.jsx"
 import AIMedicalReportAnalyzer from "../components/AIMedicalReportAnalyzer.jsx"
 import Labtracker from "../components/LabWorkflowTracker.jsx"
+import Profile from "../pages/Profile/Profile.jsx"
+
 const Routers = () => {
   return (
     <Routes>
@@ -31,6 +33,7 @@ const Routers = () => {
       <Route path="/doctors/:id" element={<DoctorDetails />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Signup />} />
+      <Route path="/profile" element={<Profile />} />
       <Route path="/report-ai" element={<AIMedicalReportAnalyzer />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/ai-risk" element={<AIHealthRiskPrediction  />} />

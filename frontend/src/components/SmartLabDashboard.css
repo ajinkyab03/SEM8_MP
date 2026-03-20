@@ -56,3 +56,19 @@
   margin-bottom: 15px;
   font-size: 18px;
 }
+
+.alert-section {
+  margin-top: 25px;
+  background: #fff3cd;
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 6px solid #ffa000;
+}
+
+.alert-section h2 {
+  margin-bottom: 10px;
+}
+
+.alert-section li {
+  margin-bottom: 8px;
+}
